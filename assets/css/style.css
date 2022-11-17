@@ -1,0 +1,59 @@
+body {
+  background: rgb(0,168,132);
+  background: linear-gradient(0deg,  rgb(236, 229, 221) 85% ,  rgb(	18, 140, 126) 10%);
+  width: 100vw;
+  height: 100vh;
+  }
+
+#root{
+  width: 80%;
+  height: 95%;
+  background-color: white;
+}
+
+.bg-header{
+  background-color: #EAEAEA;
+  height: 5rem;
+}
+
+#my-avatar{
+  width: 3rem;
+}
+
+#notifiche{
+  background-color: lightblue;
+  height: 5rem;
+}
+
+.fa-bell-slash{
+  color: lightblue;
+}
+
+.input-group-text{
+  background-color: white;
+}
+
+.avatar-contatti{
+  width: 3.5rem;
+}
+
+.bg-chat{
+  background-image: url(../img/mine.jpg);
+  height: calc(100% - 8rem);
+}
+
+.messaggio{
+  max-width: 40%;
+  border-radius: 1rem;
+  padding: .5rem;
+  margin-bottom: 1rem;
+}
+
+.inviato{
+  background-color: #D5F9BA;
+  align-self: flex-end;
+}
+
+.ricevuto{
+  background-color: white;
+}
