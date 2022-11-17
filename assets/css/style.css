@@ -33,6 +33,10 @@ body {
   background-color: white;
 }
 
+.pointer{
+  cursor: pointer;
+}
+
 .avatar-contatti{
   width: 3.5rem;
 }

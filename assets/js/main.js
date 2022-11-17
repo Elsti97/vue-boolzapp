@@ -2,7 +2,8 @@ var app = new Vue(
   {
     el: '#root',
     data: {
-      indiceDinamico: 0,
+      indice: 0,
+      inputMessaggio: '',
       contacts: [
         {
           name: 'Michele',
@@ -168,8 +169,27 @@ var app = new Vue(
       ]
     },
     methods: {
-      conversation(element,index) {
-      this.indiceDinamico = index;
+      conversation(index) {
+        this.indice = index;
+      },
+      messaggioInviato(){
+        let inputMessaggio = this.contacts[this.indice].messages
+        inputMessaggio.push(
+          {
+          date: '10/01/2020 15:51:00',
+          message: this.inputMessaggio,
+          status: 'sent'
+        })
+        setTimeout(this.risposta, 1000)
+      },
+      risposta(){
+        let inputMessaggio = this.contacts[this.indice].messages
+        inputMessaggio.push(
+          {
+          date: '10/01/2020 15:51:00',
+          message: 'Ok',
+          status: 'received'
+        })
       },
     },
   }
