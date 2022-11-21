@@ -44,12 +44,12 @@
       <div class="p-1">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" @keyup="ricercaContatti" v-model="ricercaContattiText">
         </div>
       </div>
 
       <!-- UTENTI -->
-      <div class="d-flex align-items-center border-bottom pointer" v-for="(elem, index) in contacts" @click="conversation(index)">
+      <div class="d-flex align-items-center border-bottom pointer" v-for="(elem, index) in contacts" @click="conversation(index)" v-if="elem.visible">
         <img v-bind:src="'./assets/img/avatar' + elem.avatar + '.jpg'" alt="avatar_1" class="rounded-circle mt-0 m-3 avatar-contatti">
         <h6>{{elem.name}}</h6>
       </div>
@@ -82,7 +82,7 @@
       <!-- INPUT MESSAGGIO -->
       <div class="p-1">
         <div class="input-group mb-3 align-items-center">
-          <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-face-smile my-1"></i></i></span>
+          <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-face-smile my-1"></i></span>
           <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1" v-model="inputMessaggio" @keyup.enter="messaggioInviato">
           <i class="fa-solid fa-microphone mx-3"></i>
         </div>

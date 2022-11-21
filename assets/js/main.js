@@ -4,6 +4,7 @@ var app = new Vue(
     data: {
       indice: 0,
       inputMessaggio: '',
+      ricercaContattiText: '',
       contacts: [
         {
           name: 'Michele',
@@ -189,6 +190,33 @@ var app = new Vue(
           date: '10/01/2020 15:51:00',
           message: 'Ok',
           status: 'received'
+        })
+      },
+      // ricercaContatti() {
+        
+      //   this.contacts.forEach((element, index) => {
+      //     if (this.ricercaContattiText == "") {
+      //       contatti[index].visible = true;
+      //     } 
+      //     else {
+      //           let nome = contatti[index].name
+      //           if ( nome.includes(this.ricercaContattiText) ||  nome.toLowerCase().includes(this.ricercaContattiText) ||  nome.toUpperCase().includes(this.ricercaContattiText)) {
+      //           contatti[index].visible = true;
+      //           } 
+      //           else {
+      //               contatti[index].visible = false;
+      //           }
+      //       }
+      //   });
+      // },
+      ricercaContatti() {
+        this.contacts.forEach((elem)=>{
+          let nameLower = elem.name.toLowerCase();
+          if(nameLower.includes( this.ricercaContattiText.toLowerCase())){
+            elem.visible = true
+          } else {
+            elem.visible = false
+          }
         })
       },
     },
